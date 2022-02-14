@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import ScreenA from "./pages/screen-a/screen-a";
+import ScreenB from "./pages/screen-b/screen-b";
+import ScreenC from "./pages/screen-c/screen-c";
+import { Container } from "@mui/material";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Routes>
+        <Route path="/screen-a" element={<ScreenA />} />
+        <Route path="/screen-b" element={<ScreenB />} />
+        <Route path="/screen-c" element={<ScreenC />} />
+        <Route path="*" element={<Navigate to="/screen-a" />} />
+      </Routes>
+    </Container>
   );
-}
+};
 
 export default App;
