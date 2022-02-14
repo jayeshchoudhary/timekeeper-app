@@ -37,13 +37,15 @@ const App = () => {
     timeKeeperData.startTime = timeKeeperData.endTime - timeKeeperData.duration;
 
     setTimeKeeper(timeKeeperData);
+  }, []);
 
+  useEffect(() => {
     setSearchParams({
-      duration: timeKeeperData.duration.toString(),
-      startTime: timeKeeperData.startTime.toString(),
-      endTime: timeKeeperData.endTime.toString(),
+      duration: timeKeeper.duration.toString(),
+      startTime: timeKeeper.startTime.toString(),
+      endTime: timeKeeper.endTime.toString(),
     });
-  }, [location.pathname]);
+  }, [location.pathname, timeKeeper]);
 
   return (
     <Container>

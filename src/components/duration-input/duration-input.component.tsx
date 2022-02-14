@@ -6,11 +6,9 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { Box } from "@mui/system";
 import { TimeKeeperType } from "../../store/timekeeper/timekeeper.interfaces";
-import { useSearchParams } from "react-router-dom";
 
 const DurationInput = () => {
   const { timeKeeper, setTimeKeeper } = useTimeKeeperStore();
-  let [searchParams, setSearchParams] = useSearchParams();
 
   const handleDurationChange = (value: Date | null) => {
     if (!value || value.getTime() === timeKeeper.duration) {
@@ -28,12 +26,6 @@ const DurationInput = () => {
     };
 
     setTimeKeeper(currentTimekeeperData);
-
-    setSearchParams({
-      duration: duration.toString(),
-      startTime: startTime.toString(),
-      endTime: endTime.toString(),
-    });
   };
 
   return (
