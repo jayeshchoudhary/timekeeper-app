@@ -37,7 +37,6 @@ const DurationInput = () => {
           value={new Date(timeKeeper.duration)}
           onChange={handleDurationChange}
           renderInput={(params) => <TextField {...params} />}
-          okText="ok"
         />
       </Box>
     </LocalizationProvider>
