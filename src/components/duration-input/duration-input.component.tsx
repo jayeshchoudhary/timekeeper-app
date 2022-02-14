@@ -10,7 +10,7 @@ import { useSearchParams } from "react-router-dom";
 
 const DurationInput = () => {
   const { timeKeeper, setTimeKeeper } = useTimeKeeperStore();
-  let [_, setSearchParams] = useSearchParams();
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const handleDurationChange = (value: Date | null) => {
     if (!value || value.getTime() === timeKeeper.duration) {

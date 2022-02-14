@@ -8,7 +8,9 @@ const TimeKeeperDisplay = () => {
 
   return (
     <Box my={2}>
-      <Typography variant="h6">Timekeeper details</Typography>
+      <Typography fontWeight={"bold"} variant="h6">
+        Timekeeper details
+      </Typography>
       <Typography>{`Type: ${timeKeeper.type}`}</Typography>
       <Typography>{`Duration: ${getDisplayDate(
         timeKeeper.duration
